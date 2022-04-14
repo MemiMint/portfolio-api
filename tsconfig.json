@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "moduleResolution": "Node"
+  }
+}
