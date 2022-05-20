@@ -7,6 +7,7 @@ import {
   UpdateProjectRoute,
   DeleteProjectRoute,
 } from "./project";
+import { RootRoute } from "./root";
 import { IRoute } from "./IRoute";
 
 export class Routes implements IRoute {
@@ -22,6 +23,7 @@ export class Routes implements IRoute {
       new GetProjectRoute(this.app),
       new UpdateProjectRoute(this.app),
       new DeleteProjectRoute(this.app),
+      new RootRoute(this.app)
     ];
   }
 
