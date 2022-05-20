@@ -10,14 +10,16 @@ export class SendEmailController {
         });
       }
 
-      await sendEmail(req.body.email, req.body.name, req.body.message);
+      const response = await sendEmail(req.body.email, req.body.name, req.body.message);
 
       return res.status(200).json({
-        message: "Email has been sent",
+        message: response
       });
     } catch (error) {
       console.error(error);
-      return res.status(500).json(error);
+      return res.status(500).json({
+        message: "Something Went Wrong"
+      });
     }
   };
 }

@@ -1,6 +1,9 @@
 import { Application } from "express";
+import { config } from "dotenv";
 import { SendEmailController } from "../../../controller/email";
 import { IRoute } from "../IRoute";
+
+config();
 
 export class SendEmailRoute implements IRoute {
   private app: Application;

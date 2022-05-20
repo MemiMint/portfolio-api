@@ -23,7 +23,7 @@ export class App extends DatabaseConnection implements IApp {
   }
 
   public Init = (): void => {
-    this.app.listen(3000, () => {
+    this.app.listen(this.app.get("port"), () => {
       this.middlewares.Init();
       this.settings.Init();
       this.routes.Init();

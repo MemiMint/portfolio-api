@@ -1,5 +1,9 @@
+import { config } from "dotenv";
 import { transporter } from "../config/mailer";
 import { SendMailOptions } from "nodemailer";
+
+
+config();
 
 export const sendEmail = async (
   email: string,
@@ -10,7 +14,7 @@ export const sendEmail = async (
     const mailOPtion: SendMailOptions = {
       from: name,
       to: process.env.GMAIL_USER,
-      subject: "portfolio",
+      subject: "propuesta de trabajo",
       html: `
       Got a message from
       Email: ${email}
@@ -21,9 +25,9 @@ export const sendEmail = async (
 
     await transporter.sendMail(mailOPtion);
 
-    return Promise.resolve("message sent");
+    return Promise.resolve("Your message has been sent");
   } catch (error) {
     console.error(error);
-    return Promise.reject(error);
+    return Promise.reject("Something went wrong.");
   }
 };

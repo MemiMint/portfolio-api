@@ -11,6 +11,6 @@ export class Settings implements ISettings {
   }
 
   public Init = () => {
-    this.app.set("port", process.env.PORT || 8080);
+    this.app.set("port", process.env.PORT || 4000);
   };
 }

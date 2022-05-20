@@ -17,8 +17,7 @@ export class UpdateProjectDataAcess {
         subtitle,
         description,
         link,
-        tags,
-        gallery,
+        tags
       },
     })) as IProject;
 

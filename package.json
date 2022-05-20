@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.3"
+  },
   "scripts": {
-    "start": "tsc",
+    "postInstall": "tsc && mv -i -v public dist/",
     "dev": "nodemon src/index.ts --exec ts-node ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-ts": "tsc-w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku"
   },
   "keywords": [],
   "author": "",

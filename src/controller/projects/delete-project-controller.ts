@@ -10,9 +10,10 @@ export class DeleteProjectController {
 
   DeleteProject = async (req: Request, res: Response) => {
     try {
-      await this.DataAcess.DeleteProject(req.params.id);
-      return res.status(204).json({
-        message: "Project Has Been Deleted",
+      const deletedProject = await this.DataAcess.DeleteProject(req.params.id);
+
+      return res.status(200).json({
+        project: deletedProject
       });
     } catch (error) {
       console.error(error);

@@ -7,7 +7,7 @@ export abstract class DatabaseConnection {
 
   constructor() {
     config();
-    this.mongodbUri = `mongodb://${process.env.MONGODB_HOST}/${process.env.MONGODB_DATABASE}`;
+    this.mongodbUri = `mongodb+srv://Yeferson:nnz4lGmSqYYAgFQj@cluster0.uxy9m.mongodb.net/portfolio?retryWrites=true&w=majority`;
   }
 
   protected GetConnection = async () => {
@@ -17,7 +17,7 @@ export abstract class DatabaseConnection {
         console.log("Database is connected");
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
   };
 }

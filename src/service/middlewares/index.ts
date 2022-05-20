@@ -11,6 +11,7 @@ export class Middlewares implements IMiddlewares {
   }
 
   public Init = (): void => {
+    this.app.use(express.static("public"));
     this.app.use(morgan("dev"));
     this.app.use(cors());
     this.app.use(express.urlencoded({ extended: true }));

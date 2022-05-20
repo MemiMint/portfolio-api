@@ -1,3 +1,5 @@
-export interface IRoute {
-  Init: () => void;
+import { IService } from "../IService"
+
+export interface IRoute extends IService {
+  
 }
